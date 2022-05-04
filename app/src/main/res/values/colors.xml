@@ -17,5 +17,8 @@
     <color name="blue_800">#0288d1 </color>
     <color name="blue_900">#0277bd</color>
     <color name="blue_1000">#01579b</color>
+    <color name="green">#beffa6</color>
+    <color name="yellow">#ffffa6</color>
+    <color name="red">#ffa6a6</color>
 
 </resources>

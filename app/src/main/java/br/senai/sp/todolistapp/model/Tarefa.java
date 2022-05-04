@@ -1,6 +1,11 @@
 package br.senai.sp.todolistapp.model;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class Tarefa {
+    @PrimaryKey(autoGenerate = true)
     private Long idTarefa;
     private String titulo;
     private String descricao;
@@ -54,5 +59,11 @@ public class Tarefa {
 
     public void setDataFinalizada(long dataFinalizada) {
         DataFinalizada = dataFinalizada;
+    }
+    public boolean isConcluida(){
+        return getDataFinalizada() !=0;
+    }
+    public boolean isAtrasada(){
+        return true;
     }
 }
