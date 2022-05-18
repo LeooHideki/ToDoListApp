@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.CadSubtarefaFragment">
+    tools:context=".fragment.CadTarefaFragment"
+    android:orientation="vertical"
+    android:padding="10dp">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
-</FrameLayout>
+        android:layout_height="wrap_content"
+        android:id="@+id/nomeTarefa"
+        android:textSize="30dp"
+        android:background="@color/blue_400" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Subtarefa"
+        android:textSize="20dp"
+        android:background="@color/blue_300"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_200"
+        android:textSize="20dp"
+        android:id="@+id/subtarefa"
+        android:hint="Escreva a subtarefa..."/>
+    <ImageView
+        android:id="@+id/imageFoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/camera"/>
+</LinearLayout>

@@ -4,30 +4,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.CadTarefaFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="10dp">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Título da Tarefa"
         android:textSize="20dp"
+        android:background="@color/blue_400"
         android:textColor="@color/black"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/blue_300"
+        android:hint="Escreva o título..."
+        android:layout_marginBottom="10dp"
         android:id="@+id/etTarefa"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Descrição da tarefa"
         android:textSize="20dp"
+        android:background="@color/blue_400"
         android:textColor="@color/black"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/etDesc"
         android:background="@drawable/border"
-        android:lines="5"
+        android:lines="1"
         android:layout_margin="5dp"
         android:inputType="textCapSentences|textMultiLine"
         android:gravity="top"/>

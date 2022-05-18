@@ -1,6 +1,7 @@
 package br.senai.sp.todolistapp.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,18 +22,21 @@ public class TarefaAdapter extends RecyclerView.Adapter<TarefaAdapter.TarefaView
     private List<Tarefa> tarefas;
     //variável para o Context
     private Context context;
+    //variável pro listener
+    private OnTarefaClickListener listenerTarefa;
 
     //construtor que recebe os parâmetros para o Adapter
-    public TarefaAdapter(List<Tarefa> lista, Context contexto){
+    public TarefaAdapter(List<Tarefa> lista, Context contexto, OnTarefaClickListener listenerTarefa){
         this.tarefas = lista;
         this.context = contexto;
+        this.listenerTarefa = listenerTarefa;
     }
 
     @NonNull
     @Override
     public TarefaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //inflar a view do viewHolder
-        View view = LayoutInflater.from(context).inflate(R.layout.adapter_tarefas, parent, false);
+                View view = LayoutInflater.from(context).inflate(R.layout.adapter_tarefas, parent, false);
         //retorna uma viewHolder
         return new TarefaViewHolder(view);
     }
@@ -54,6 +58,11 @@ public class TarefaAdapter extends RecyclerView.Adapter<TarefaAdapter.TarefaView
             holder.tvStatus.setText(R.string.aberta);
             holder.tvStatus.setBackgroundColor(context.getResources().getColor(R.color.yellow));
         }
+        //implementar o click na tarefa
+        holder.itemView.setOnClickListener(v -> {
+            listenerTarefa.onCLick(v, t);
+
+        });
     }
 
     @Override
@@ -75,6 +84,10 @@ public class TarefaAdapter extends RecyclerView.Adapter<TarefaAdapter.TarefaView
             tvData = view.findViewById(R.id.tvNomeData);
             tvStatus = view.findViewById(R.id.tvStatus);
         }
+    }
+    //iinterface para o click na tarefa
+    public interface OnTarefaClickListener {
+        void onCLick(View v, Tarefa t);
 
     }
 }
